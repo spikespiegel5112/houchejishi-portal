@@ -24,7 +24,7 @@
               </div>
 
             </div>
-            <div class="banner">
+            <div class="picture">
               <img src="../image/introduction/slide_1.png" alt="">
             </div>
           </li>
@@ -75,4 +75,8 @@ export default {
 </script>
 <style lang="css">
 @import "../../node_modules/swiper/css/swiper.min.css";
+</style>
+
+<style lang="scss">
+@import "../sass/introduction.scss";
 </style>

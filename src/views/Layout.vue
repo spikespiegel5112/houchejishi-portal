@@ -9,7 +9,9 @@
           </div>
         </div>
         <div class="center"></div>
-        <div class="right"></div>
+        <div class="right">
+          <p>“吉”成信用的力量</p>
+        </div>
       </div>
       <div class="common_nav_wrapper">
         <div class="bg"></div>
