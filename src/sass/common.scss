@@ -1,0 +1,107 @@
+.common_layout_container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./image/common/corner_top.png");
+    background-repeat: no-repeat;
+}
+
+.common_main_container {
+    width: 100%;
+}
+.common_main_wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.common_header_wrapper {
+    margin: 0 auto;
+    width: 1200px;
+    .top {
+        width: 100%;
+        height: 130px;
+        .left {
+            text-align: left;
+            .logo {
+                width: 150px;
+                img {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+        .center {
+        }
+        .right {
+        }
+    }
+}
+.common_nav_wrapper {
+    width: 100%;
+    height: 30px;
+    background-color: #e67331;
+    position: relative;
+    .bg {
+        &:before {
+            content: "";
+            // display: inline-block;
+            float: left;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+            border-width: 0 0 30px 50px;
+        }
+        &:after {
+            content: "";
+            // display: inline-block;
+            float: right;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+            border-width: 0 0 30px 50px;
+        }
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    ul {
+        display: flex;
+        margin: 0 auto;
+        width: 1000px;
+        height: 100%;
+        justify-content: space-between;
+        position: relative;
+        // &:before {
+        //     content: "";
+        //     display: inline-block;
+        //     width: 0;
+        //     height: 30px;
+        //     vertical-align: middle;
+        // }
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            a {
+                display: inline-block;
+                line-height: 30px;
+                vertical-align: middle;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.swiper-container {
+    .swiper-wrapper {
+    }
+    .swiper-pagination {
+        position: fixed;
+        top: 100px;
+        right: 100px!important;
+        .swiper-pagination-bullet {
+            margin: 50px 0!important;
+            width: 15px;
+            height: 15px;
+            background-color: #e67331;
+        }
+    }
+}

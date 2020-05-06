@@ -1,0 +1,144 @@
+.homepage {
+    margin: 0 auto;
+    width: 100%;
+    height: calc(100vh - 160px);
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+
+    .banner {
+        width: 100%;
+        height: 100%;
+
+        .bannertitle {
+            display: inline-block;
+            vertical-align: middle;
+            width: 450px;
+            img {
+                display: inline-block;
+                width: 450px;
+            }
+        }
+        .main {
+            display: inline-block;
+            width: 750px;
+            height: 100%;
+            vertical-align: middle;
+            overflow: visible;
+            ul {
+                // width: 100%;
+
+                height: 100%;
+                li {
+                    padding: 50px 0 0 50px;
+
+                    height: 100%;
+                    box-sizing: border-box;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        width: 480px;
+        height: 230px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url("./image/homepage/corner_bottom.png");
+        background-size: cover;
+        background-position: bottom;
+    }
+}
+
+.introduction {
+    margin: 0 auto;
+    width: 100%;
+    height: calc(100vh - 160px);
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+    > .banner {
+        margin: 0 auto;
+        width: 1200px;
+        height: 100%;
+        .main {
+            width: 100%;
+            height: 100%;
+            ul {
+                li {
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+
+                    .content {
+                        display: inline-block;
+                        flex: 1;
+                        height: auto;
+                        vertical-align: middle;
+                        text-align: left;
+                        font-size: 0;
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 0;
+                            height: 100%;
+                            vertical-align: middle;
+                        }
+                        > div {
+                            display: inline-block;
+                            width: 100%;
+                            vertical-align: middle;
+                            .title {
+                                // vertical-align: middle;
+                            }
+                            .article {
+                                font-size: 15px;
+
+                                h2 {
+                                    margin: 20px 0;
+
+                                    color: #e67331;
+                                    font-size: 25px;
+                                }
+                                .paragraph {
+
+                                }
+                                .rules {
+                                    li{
+                                        margin: 10px 0;
+                                        list-style: disc;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .banner {
+                        display: inline-block;
+                        width: 800px;
+                        height: 100%;
+
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        height: 1000px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url("./image/introduction/footer.png");
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+}
