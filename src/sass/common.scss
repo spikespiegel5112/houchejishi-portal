@@ -22,7 +22,7 @@
     .top {
         display: block;
         margin: 0 auto;
-        width: 1000px;
+        width: 1015px;
         height: 130px;
         &:before {
             content: "";
@@ -95,6 +95,7 @@
     }
     ul {
         display: flex;
+        padding: 0 45px;
         flex: 1;
 
         margin: 0 auto;
