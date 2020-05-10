@@ -1,6 +1,5 @@
 <template>
   <div class='common_layout_container'>
-    <div></div>
     <div class="common_header_wrapper">
       <div class="top">
         <div class="left">
@@ -16,7 +15,8 @@
       <div class="common_nav_wrapper">
         <div class="bg"></div>
         <ul>
-          <li v-for='(item, index) in menuDictionary' :key='index'>
+          <li v-for='(item, index) in menuDictionary' :key='index' :class="{active:item.active===true}"
+            @click='changeNav(item, index)'>
             <router-link :to="item.path">{{item.title}}</router-link>
           </li>
         </ul>
@@ -34,9 +34,7 @@
 
 export default {
   name: 'Layout',
-  components: {
 
-  },
   data() {
     return {
       menuDictionary: [{
@@ -45,7 +43,7 @@ export default {
         active: false
       }, {
         title: '系统登录',
-        path: 'homepage',
+        path: 'system',
         active: false
       }, {
         title: '产品介绍',
@@ -55,20 +53,32 @@ export default {
         title: '合作机会',
         path: 'contact',
         active: false
-      }]
+      }],
+      routeData: {}
     }
   },
-  computed: {
-
+  watch: {
+    routeData(val) {
+      this.changeNav(val)
+    }
   },
   mounted() {
+    this.routeData = this.$route
   },
   methods: {
+    changeNav(val) {
+      let result = []
+      this.menuDictionary.forEach((item) => {
+        let aaa = JSON.parse(JSON.stringify(Object.assign(item, {
+          active: item.path === val.path.replace('/', '')
+        })))
+        result.push(aaa)
 
+      })
+      this.menuDictionary = result
+
+    }
 
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

@@ -42,7 +42,7 @@ export default {
       new Swiper('.swiper-container', {
         direction: 'vertical',
         mousewheel: true,
-        // effect: 'fade',
+        effect: 'fade',
         spaceBetween: 300,
         pagination: {
           el: '.swiper-pagination',
