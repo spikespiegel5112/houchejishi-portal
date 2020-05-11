@@ -55,5 +55,5 @@ export default {
 }
 </script>
 <style lang="css">
-@import "../../node_modules/swiper/css/swiper.min.css";
+/* @import "../../node_modules/swiper/dist/css/swiper.min.css"; */
 </style>

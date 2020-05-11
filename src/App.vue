@@ -31,3 +31,6 @@
   }
 }
 </style>
+<style lang="css">
+@import "../node_modules/swiper/dist/css/swiper.min.css";
+</style>
