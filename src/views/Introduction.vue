@@ -24,6 +24,7 @@
             <div class="picture">
               <img src="../image/introduction/introduction_slider_1.png" alt="">
             </div>
+
           </li>
           <li class="swiper-slide page2" :class="getActiveClass(1)">
             <div class="picture">
@@ -80,14 +81,16 @@
             <div class="picture">
               <img src="../image/introduction/introduction_slider_3.png" alt="">
             </div>
+            
           </li>
         </ul>
         <div class="swiper-pagination"></div>
 
       </div>
+      <div class="footer"></div>
 
     </div>
-    <div class="footer"></div>
+
   </div>
 </template>
 
@@ -103,7 +106,8 @@ export default {
   data() {
     return {
       swiperInstance: {},
-      activeIndex: null
+      activeIndex: null,
+      slidingFlag: false
     }
   },
   mounted() {
@@ -134,6 +138,12 @@ export default {
         console.log('slide previousIndex', this.swiperInstance.previousIndex);
         this.activeIndex = this.swiperInstance.activeIndex
         this.previousIndex = this.swiperInstance.previousIndex
+        this.swiperInstance.on('slideChangeTransitionStart', () => {
+          this.slidingFlag = true
+        })
+        this.swiperInstance.on('slideChangeTransitionEnd', () => {
+          this.slidingFlag = false
+        })
       });
       setTimeout(() => {
         this.activeIndex = 0
@@ -156,7 +166,7 @@ export default {
 
       return result
 
-    }
+    },
   }
 }
 </script>
