@@ -26,22 +26,38 @@
                     </li>
                   </ul>
                 </div>
-
                 <h2><img src="../image/cooperation/cooperation_qa.png" alt=""></h2>
+
+              </div>
+              <div class="picture">
+                <img src="../image/cooperation/cooperation_banner.png" alt="">
               </div>
             </div>
-            <div class="picture">
-              <img src="../image/cooperation/cooperation_banner.png" alt="">
+            <div class="qa">
+              <div class='content'>
+                <dl>
+                  <dt>Q：吉市分期的优势是什么？</dt>
+                  <dd>A：吉市分期利用先进的金融科技手段，整合全国30多家银行和金融机构的信用产品，为B端商户提供一站式、可编辑的分期收款工具。</dd>
+                </dl>
+                <dl>
+                  <dt>Q：我是线下小商户，可以开通“吉市分期”收款吗？</dt>
+                  <dd>A：线下商户能提供营业执照、实际经营店面地址、店面照片、收款账户即可申请开通。</dd>
+                </dl>
+                <dl>
+                  <dt>Q：我是线上商户，如何申请开通“吉市分期”收款？</dt>
+                  <dd>A：线上商户需要提供网址、ICP备案号、收款账户信息即可开通。</dd>
+                </dl>
+              </div>
             </div>
+
           </li>
 
         </ul>
-        <div class="swiper-pagination"></div>
 
       </div>
 
     </div>
-    <div class="footer"></div>
+    <!-- <div class="footer"></div> -->
   </div>
 </template>
 

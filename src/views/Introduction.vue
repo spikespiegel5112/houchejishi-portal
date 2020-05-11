@@ -3,7 +3,7 @@
     <div class="banner">
       <div class="main swiper-container">
         <ul class="swiper-wrapper">
-          <li class="swiper-slide page1">
+          <li class="swiper-slide page1" :class="getActiveClass(0)">
             <div class="content ">
               <div class="title">
                 <img src="../image/introduction/slide_title_1.png" alt="">
@@ -25,7 +25,7 @@
               <img src="../image/introduction/introduction_slider_1.png" alt="">
             </div>
           </li>
-          <li class="swiper-slide page2">
+          <li class="swiper-slide page2" :class="getActiveClass(1)">
             <div class="picture">
               <img src="../image/introduction/introduction_slider_2.png" alt="">
             </div>
@@ -64,7 +64,7 @@
             </div>
 
           </li>
-          <li class="swiper-slide page3">
+          <li class="swiper-slide page3" :class="getActiveClass(2)">
             <div class="content ">
               <div class="article">
                 <h1>付车险，就一点</h1>
@@ -100,12 +100,19 @@ export default {
   name: 'Home',
   components: {
   },
+  data() {
+    return {
+      swiperInstance: {},
+      activeIndex: null
+    }
+  },
   mounted() {
     this.init()
+    // this.active()
   },
   methods: {
     init() {
-      new Swiper('.swiper-container', {
+      this.swiperInstance = new Swiper('.swiper-container', {
         direction: 'vertical',
         cubeEffect: {
           shadow: false,
@@ -120,9 +127,35 @@ export default {
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-
         },
       })
+      this.swiperInstance.on('slideChange', () => {
+        console.log('slide activeIndex', this.swiperInstance.activeIndex);
+        console.log('slide previousIndex', this.swiperInstance.previousIndex);
+        this.activeIndex = this.swiperInstance.activeIndex
+        this.previousIndex = this.swiperInstance.previousIndex
+      });
+      setTimeout(() => {
+        this.activeIndex = 0
+
+      }, 200)
+    },
+    active() {
+
+    },
+    getActiveClass(index) {
+      let result = ''
+      if (index === this.activeIndex) {
+        if ((this.previousIndex || 0) - this.activeIndex <= 0) {
+          result = 'fromtop'
+        } else {
+          result = 'frombottom'
+        }
+        result = 'active ' + result
+      }
+
+      return result
+
     }
   }
 }
