@@ -1,0 +1,131 @@
+.cooperation {
+    margin: 0 auto;
+    width: 100%;
+    height: calc(100vh - 160px);
+    position: relative;
+    overflow: hidden;
+    > .content {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    > .banner {
+        margin: 0 auto;
+        width: 1200px;
+        height: 100%;
+        .main {
+            width: 100%;
+            height: 100%;
+            height: calc(100vh - 380px);
+            min-height: 330px;
+
+            > ul {
+                > li {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    .content {
+                        display: inline-block;
+                        width: 480px;
+
+                        vertical-align: bottom;
+                        text-align: left;
+                        font-size: 0;
+
+                        .article {
+                            margin: 20px 0 0 0;
+                            font-size: 15px;
+                            overflow: hidden;
+
+                            h2 {
+                                margin: 35px 0 10px 0;
+                                color: #e67331;
+                                font-size: 24px;
+                            }
+                            .paragraph {
+                                padding: 10px 0;
+                                line-height: 30px;
+                                font-size: 13px;
+                                position: relative;
+                                color: #000;
+                            }
+                            .procedure {
+                                ul {
+                                    li {
+                                        display: inline-block;
+                                        font-size: 0;
+                                        &:before {
+                                            content: "";
+                                            display: inline-block;
+                                            width: 30px;
+                                            height: 25px;
+                                            background-image: url("../image/cooperation/cooperation_procedure.png");
+                                            background-repeat: no-repeat;
+                                            vertical-align: middle;
+                                        }
+                                        &:first-child:before {
+                                            content: "";
+                                            display: inline-block;
+                                            width: 0;
+                                            height: 25px;
+                                            vertical-align: middle;
+                                        }
+                                        p {
+                                            display: inline-block;
+                                            height: 25px;
+                                            line-height: 20px;
+                                            vertical-align: middle;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .picture {
+                        display: inline-block;
+                        width: 600px;
+                        height: 530px;
+
+                        vertical-align: bottom;
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 0;
+                            height: 100%;
+                            vertical-align: middle;
+                        }
+                        img {
+                            display: inline-block;
+                            width: 100%;
+                            vertical-align: middle;
+                        }
+                    }
+                    &.page1 {
+                        padding: 0 0 0 40px;
+                        .content {
+                            margin: 0 29px 0 0;
+                            height: 450px;
+                            .article {
+                                .paragraph {
+                                    text-indent: 2em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        height: 1000px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url("../image/introduction/introduction_footer.png");
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+}

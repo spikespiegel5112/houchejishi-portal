@@ -51,7 +51,7 @@ export default {
         active: false
       }, {
         title: '合作机会',
-        path: 'contact',
+        path: 'cooperation',
         active: false
       }],
       routeData: {}
