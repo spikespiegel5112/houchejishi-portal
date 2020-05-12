@@ -1,5 +1,8 @@
 <template>
   <div class="homepage">
+    <div class="top">
+      <div class="decoration"></div>
+    </div>
     <div class="banner">
       <div class="bannertitle">
         <img src="../image/homepage/banner_title.png" alt="">

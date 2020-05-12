@@ -240,17 +240,18 @@ export default {
         marginLeft = (x - mx) / 90
         marginTop = (y - my) / 70
         // await this.$nextTick()
-        for (var i = 0; i < oLi.length; i++) {
+        for (let i = 0; i < oLi.length; i++) {
           //左边距和上边距的值可以随意调整
-          console.log('marginLeft', oLi[i])
-          console.log('marginLeft', oLi[i].style.zIndex)
-          console.log('marginLeft', marginLeft)
-          console.log('marginLeft', marginLeft + 'px')
-          console.log('marginTop', marginTop + 'px')
+          // console.log('marginLeft', oLi[i])
+          // console.log('marginLeft', oLi[i].style.zIndex)
+          // console.log('marginLeft', marginLeft)
+          // console.log('marginLeft', marginLeft + 'px')
+          // console.log('marginTop', marginTop + 'px')
 
           oLi[i].style.transform = 'translate(' + marginLeft + 'px,' + marginTop + 'px)';
+        }
+        for (let i = 0; i < oLi2.length; i++) {
           oLi2[i].style.transform = 'translate(' + marginLeft + 'px,' + marginTop + 'px)';
-
         }
 
 

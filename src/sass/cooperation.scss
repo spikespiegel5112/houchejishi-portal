@@ -4,9 +4,23 @@
     height: calc(100vh - 130px);
     position: relative;
     overflow: hidden;
-    > .content {
-        display: inline-block;
-        vertical-align: middle;
+    .bgleft {
+        width: 460px;
+        height: 810px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url('../image/cooperation/cooperation_bg_left.png');
+        background-repeat: no-repeat;
+    }
+    .bgright {
+        width: 310px;
+        height: 830px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-image: url('../image/cooperation/cooperation_bg_right.png');
+        background-repeat: no-repeat;
     }
     > .banner {
         margin: 0 auto;
@@ -17,120 +31,101 @@
             height: 100%;
             height: calc(100vh - 130px);
             min-height: 330px;
+            padding: 0 0 0 130px;
 
-            > ul {
-                > li {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    .content {
-                        display: inline-block;
-                        width: 480px;
+            > .content {
+                display: inline-block;
 
-                        text-align: left;
-                        font-size: 0;
+                margin: 0 29px 0 0;
+                padding: 50px 0 0 0;
+                width: 100%;
+                height: 450px;
+                text-align: left;
+                font-size: 0;
+                .article {
+                    display: inline-block;
+                    margin: 20px 0 0 0;
+                    font-size: 15px;
+                    overflow: hidden;
+                    vertical-align: middle;
 
-                        .article {
-                            display: inline-block;
-                            margin: 20px 0 0 0;
-                            font-size: 15px;
-                            overflow: hidden;
-                            vertical-align: middle;
-
-                            h2 {
-                                margin: 50px 0 20px 0;
-                                color: #e67331;
-                                font-size: 24px;
-                            }
-                            .paragraph {
-                                padding: 10px 0;
-                                line-height: 10px;
-                                font-size: 13px;
-                                position: relative;
-                                color: #000;
-                            }
-                            .procedure {
-                                ul {
-                                    li {
-                                        display: inline-block;
-                                        font-size: 0;
-                                        &:before {
-                                            content: "";
-                                            display: inline-block;
-                                            width: 30px;
-                                            height: 25px;
-                                            background-image: url("../image/cooperation/cooperation_procedure.png");
-                                            background-repeat: no-repeat;
-                                            vertical-align: middle;
-                                        }
-                                        &:first-child:before {
-                                            content: "";
-                                            display: inline-block;
-                                            width: 0;
-                                            height: 25px;
-                                            vertical-align: middle;
-                                        }
-                                        p {
-                                            display: inline-block;
-                                            height: 25px;
-                                            line-height: 20px;
-                                            vertical-align: middle;
-                                            font-size: 14px;
-                                        }
-                                    }
+                    h2 {
+                        margin: 50px 0 20px 0;
+                        color: #e67331;
+                        font-size: 24px;
+                    }
+                    .paragraph {
+                        padding: 10px 0;
+                        line-height: 10px;
+                        font-size: 13px;
+                        position: relative;
+                        color: #000;
+                    }
+                    .procedure {
+                        ul {
+                            li {
+                                display: inline-block;
+                                font-size: 0;
+                                &:before {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 30px;
+                                    height: 25px;
+                                    background-image: url("../image/cooperation/cooperation_procedure.png");
+                                    background-repeat: no-repeat;
+                                    vertical-align: middle;
+                                }
+                                &:first-child:before {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 0;
+                                    height: 25px;
+                                    vertical-align: middle;
+                                }
+                                p {
+                                    display: inline-block;
+                                    height: 25px;
+                                    line-height: 20px;
+                                    vertical-align: middle;
+                                    font-size: 14px;
                                 }
                             }
                         }
-                       
                     }
-                    .picture {
+                }
+                .picture {
+                    display: inline-block;
+                    padding: 0 10px 0 40px;
+                    width: 580px;
+                    height: 330px;
+                    vertical-align: middle;
+                    box-sizing: unset;
+                    &:before {
+                        content: "";
                         display: inline-block;
-                        padding: 0 10px 0 40px;
-                        width: 580px;
-                        height: 330px;
+                        width: 0;
+                        height: 100%;
                         vertical-align: middle;
-                        box-sizing: unset;
-                        &:before {
-                            content: "";
-                            display: inline-block;
-                            width: 0;
-                            height: 100%;
-                            vertical-align: middle;
-                        }
-                        img {
-                            display: inline-block;
-                            width: 100%;
-                            vertical-align: middle;
-                        }
                     }
-                    &.page1 {
-                        padding: 0 0 0 130px;
-                        >.content {
-                            margin: 0 29px 0 0;
-                            padding: 50px 0 0 0;
-                            width: 100%;
-                            height: 450px;
-                            .article {
-                                .paragraph {
-                                    // text-indent: 2em;
-                                }
-                            }
+                    img {
+                        display: inline-block;
+                        width: 100%;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .qa {
+                margin: 20px 0 0 0;
+                text-align: left;
+                .content {
+                    font-size: 14px;
+                    dl {
+                        margin: 20px 0;
+                        dt {
+                            color: #e67331;
+                            margin: 0 0 10px 0;
                         }
-                        .qa {
-                            margin: 20px 0 0 0;
-                            text-align: left;
-                            .content {
-                                font-size: 14px;
-                                dl {
-                                    margin: 20px 0;
-                                    dt {
-                                        color: #e67331;
-                                        margin: 0 0 10px 0;
-                                    }
-                                    dd {
-                                    }
-                                }
-                            }
+                        dd {
                         }
                     }
                 }
