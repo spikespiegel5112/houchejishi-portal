@@ -1,27 +1,30 @@
 <template>
   <div class='common_layout_container'>
-    <div class="common_header_wrapper">
-      <div class="top">
-        <div class="left">
-          <div class="logo">
-            <img src="@/image/common/logo.png" alt="">
+    <div class="common_header_container">
+      <div class="common_header_wrapper">
+        <div class="top">
+          <div class="left">
+            <div class="logo">
+              <img src="@/image/common/logo.png" alt="">
+            </div>
+          </div>
+          <div class="center"></div>
+          <div class="right">
+            <p>“吉”成信用的力量</p>
           </div>
         </div>
-        <div class="center"></div>
-        <div class="right">
-          <p>“吉”成信用的力量</p>
+        <div class="common_nav_wrapper">
+          <div class="bg"></div>
+          <ul>
+            <li v-for='(item, index) in menuDictionary' :key='index' :class="{active:item.active===true}"
+              @click='changeNav(item, index)'>
+              <router-link :to="item.path">{{item.title}}</router-link>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="common_nav_wrapper">
-        <div class="bg"></div>
-        <ul>
-          <li v-for='(item, index) in menuDictionary' :key='index' :class="{active:item.active===true}"
-            @click='changeNav(item, index)'>
-            <router-link :to="item.path">{{item.title}}</router-link>
-          </li>
-        </ul>
-      </div>
     </div>
+
     <div class="common_main_container">
       <router-view />
     </div>

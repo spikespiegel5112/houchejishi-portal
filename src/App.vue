@@ -33,4 +33,5 @@
 </style>
 <style lang="css">
 @import "../node_modules/swiper/dist/css/swiper.min.css";
+@import "./assets/icon/iconfont.css";
 </style>

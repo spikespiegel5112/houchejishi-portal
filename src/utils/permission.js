@@ -9,15 +9,14 @@ NProgress.configure({
 
 
 router.beforeEach(async (to, from, next) => {
-    console.log(to)
-    console.log(from)
+    console.log(from + to)
     NProgress.start()
     next()
 })
 
-router.afterEach((to, from) => {
-    console.log('from', from)
-    console.log('finsh', to)
+router.afterEach(() => {
+    // console.log(to)
+    // console.log(from)
     NProgress.done()
 })
 

@@ -4,7 +4,7 @@
     <div class="bgright"></div>
     <div class="banner">
       <div class="main">
-        <div class="content">
+        <div class="top">
           <div class="article">
             <h2 :style="animationStyle(0)">服务对象</h2>
             <p :style="animationStyle(0.2)" class="paragraph">线下实体商户，可提供营业执照、经营场地信息和照片； </p>
@@ -26,7 +26,6 @@
                 </li>
               </ul>
             </div>
-            <h2 :style="animationStyle(1)"><img src="../image/cooperation/cooperation_qa.png" alt=""></h2>
 
           </div>
           <div class="picture">
@@ -34,7 +33,11 @@
           </div>
         </div>
         <div class="qa">
-          <div class='content' :style="animationStyle(1)">
+          <div class="picture">
+            <img src="../image/cooperation/cooperation_banner_2.png" alt="">
+          </div>
+          <div class='article' :style="animationStyle(1)">
+            <h2 :style="animationStyle(1)"><img src="../image/cooperation/cooperation_qa.png" alt=""></h2>
             <dl>
               <dt :style="animationStyle(1.2)">Q：吉市分期的优势是什么？</dt>
               <dd :style="animationStyle(1.4)">A：吉市分期利用先进的金融科技手段，整合全国30多家银行和金融机构的信用产品，为B端商户提供一站式、可编辑的分期收款工具。</dd>
@@ -48,21 +51,24 @@
               <dd :style="animationStyle(2.2)">A：线上商户需要提供网址、ICP备案号、收款账户信息即可开通。</dd>
             </dl>
           </div>
+
         </div>
 
       </div>
 
     </div>
-    <!-- <div class="footer"></div> -->
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Cooperation',
   components: {
+    Footer
   },
   data() {
     return {

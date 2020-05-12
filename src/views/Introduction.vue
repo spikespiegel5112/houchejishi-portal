@@ -1,7 +1,9 @@
 <template>
-  <div class="introduction" ref='introduction' v-on:mousemove='perspactive2'>
-    <div class="top" :style='topOffset'>
-      <div class="decoration"></div>
+  <div class="introduction" ref='introduction' v-on:mousemove='perspactive'>
+    <div class="top" ref='top' :style='topOffset'>
+      <div class="decoration1"></div>
+      <div class="decoration2"></div>
+      <div class="decoration3"></div>
     </div>
     <div class="banner">
       <div class="main swiper-container">
@@ -118,7 +120,7 @@ export default {
       activeIndex: null,
       slidingFlag: false,
       footerDecoration: [],
-      footerDecoration2: []
+      topDecoration: []
     }
   },
   computed: {
@@ -136,7 +138,15 @@ export default {
         bottom: -totalOffset + offset * (this.activeIndex + 1) + 'px'
       }
     },
-    randomDictionary() {
+    footerRandomDictionary() {
+      let result = []
+      this.footerDecoration.forEach(() => {
+        const item = Math.random() > 0.5 ? '1' : '-1'
+        result.push(item)
+      })
+      return result
+    },
+    topRandomDictionary() {
       let result = []
       this.footerDecoration.forEach(() => {
         const item = Math.random() > 0.5 ? '1' : '-1'
@@ -153,8 +163,6 @@ export default {
       this.initDecoration()
 
     }, 300)
-    // this.active()
-    // this.perspactive()
   },
   methods: {
     init() {
@@ -210,18 +218,16 @@ export default {
 
     },
     initDecoration() {
-      const oLi = this.$refs.footer.children,
-        oLi2 = document.querySelectorAll('.introduction .top .decoration');
+      const oLi = this.$refs.footer.children;
+      const oLi2 = this.$refs.top.children;
       this.footerDecoration = oLi
-      console.log(oLi[0].getComputedStyle)
-      this.footerDecoration2 = oLi2
+      this.topDecoration = oLi2
     },
-    perspactive2(event) {
+    perspactive(event) {
       const x = document.body.offsetWidth / 2,
         y = document.body.offsetHeight / 2;
       const oLi = this.footerDecoration
-      // debugger
-      const oLi2 = this.footerDecoration2
+      const oLi2 = this.topDecoration
       //获取鼠标在当前窗口内的坐标值，也可以改为获取指定层的坐标:event.offsetX
       var mx = event.clientX,
         my = event.clientY;
@@ -230,27 +236,19 @@ export default {
       //开始为每个要动的元素设置左边距和上边距，以每个元素的不同zIndex值来区别移动量
       marginLeft = (x - mx) / 90
       marginTop = (y - my) / 70
-      // const offset = 2
 
 
       for (let i = 0; i < oLi.length; i++) {
         //左边距和上边距的值可以随意调整
-        console.log('randomDictionary',this.randomDictionary)
         let zIndex = window.getComputedStyle(oLi[i]).zIndex
-        oLi[i].style.transform = 'translate(' + marginLeft * zIndex * this.randomDictionary[i] + 'px,' + marginTop * zIndex * this.randomDictionary[i] + 'px)';
+        oLi[i].style.transform = 'translate(' + marginLeft * zIndex * this.footerRandomDictionary[i] + 'px,' + marginTop * zIndex * -this.footerRandomDictionary[i] + 'px)';
 
       }
       for (let i = 0; i < oLi2.length; i++) {
         let zIndex = window.getComputedStyle(oLi2[i]).zIndex
-        oLi2[i].style.transform = 'translate(' + marginLeft * zIndex + 'px,' + marginTop * zIndex + 'px)';
+        oLi2[i].style.transform = 'translate(' + marginLeft * zIndex * -this.topRandomDictionary[i] + 'px,' + marginTop * zIndex * this.topRandomDictionary[i] + 'px)';
       }
 
-      //设置当前窗口内的鼠标移动事件，也可以改为仅作用于指定层:oUl.onmousemove
-      // document.body.onmousemove = async event => {
-
-
-
-      // };
     },
   }
 }
@@ -259,4 +257,4 @@ export default {
 
 <style lang="scss" scope>
 @import "../sass/introduction.scss";
-</style>+
+</style>
