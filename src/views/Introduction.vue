@@ -1,6 +1,6 @@
 <template>
-  <div class="introduction">
-    <div class="top">
+  <div class="introduction" ref='introduction' v-on:mousemove='perspactive2'>
+    <div class="top" :style='topOffset'>
       <div class="decoration"></div>
     </div>
     <div class="banner">
@@ -90,8 +90,8 @@
         <div class="swiper-pagination"></div>
 
       </div>
-      <div class="footer">
-        <div class="decoration"></div>
+      <div class="footer" ref='footer' :style='bottomOffset'>
+        <div class="decoration1"></div>
         <div class="decoration2"></div>
         <div class="decoration3"></div>
         <div class="decoration4"></div>
@@ -109,21 +109,52 @@ import Swiper from 'swiper'
 // @ is an alias to /src
 
 export default {
-  name: 'Home',
+  name: 'Introduction',
   components: {
   },
   data() {
     return {
       swiperInstance: {},
       activeIndex: null,
-      slidingFlag: false
+      slidingFlag: false,
+      footerDecoration: [],
+      footerDecoration2: []
     }
   },
-  mounted() {
+  computed: {
+    topOffset() {
+      const totalOffset = 66;
+      const offset = totalOffset / 3
+      return {
+        top: -offset * this.activeIndex + 'px'
+      }
+    },
+    bottomOffset() {
+      const totalOffset = 66;
+      const offset = totalOffset / 3
+      return {
+        bottom: -totalOffset + offset * (this.activeIndex + 1) + 'px'
+      }
+    },
+    randomDictionary() {
+      let result = []
+      this.footerDecoration.forEach(() => {
+        const item = Math.random() > 0.5 ? '1' : '-1'
+        result.push(item)
+      })
+      return result
+    }
+
+  },
+  async mounted() {
     this.init()
+    await this.$nextTick()
+    setTimeout(() => {
+      this.initDecoration()
+
+    }, 300)
     // this.active()
     // this.perspactive()
-    this.perspactive2()
   },
   methods: {
     init() {
@@ -178,90 +209,54 @@ export default {
       return result
 
     },
-    perspactive() {
-      var imgPX = 0;
-      var imgPY = 0;
-      var divWidth = 0;
-      var divHeight = 0;
-      var flag = false; // 记录鼠标是否按下
-
-      const preserve3d = document.querySelector(".footer");
-
-      console.log(preserve3d.offsetLeft, preserve3d.offsetTop)
-      console.log(preserve3d.clientWidth, preserve3d.clientHeight)
-
-      preserve3d.addEventListener("mouseenter", () => {
-        flag = true;
-        // let evt = e || window.event;
-        imgPX = preserve3d.offsetLeft;
-        imgPY = preserve3d.offsetTop;
-        divWidth = preserve3d.clientWidth;
-        divHeight = preserve3d.clientHeight;
-
-        document.addEventListener("mousemove", e => {
-          if (flag) {
-            let evt = e || window.event;
-            var mouseX = evt.clientX - imgPX;
-            var mouseY = evt.clientY - imgPY;
-            var X = mouseX - divWidth / 2;
-            var Y = divHeight / 2 - mouseY;
-            preserve3d.style.transform =
-              `rotateY(${X / 20}deg) rotateX(${Y / 20}deg)`
-          }
-        });
-
-        document.addEventListener("mouseout", function () {
-          flag = false;
-          preserve3d.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`
-          document.removeEventListener("mouseout", function () {
-            flag = false;
-          });
-        })
-
-      });
+    initDecoration() {
+      const oLi = this.$refs.footer.children,
+        oLi2 = document.querySelectorAll('.introduction .top .decoration');
+      this.footerDecoration = oLi
+      console.log(oLi[0].getComputedStyle)
+      this.footerDecoration2 = oLi2
     },
-    perspactive2() {
-      // const oUl = document.querySelector('.footer');
-      const oLi = document.querySelectorAll('.introduction .footer>div'),
-       oLi2 = document.querySelectorAll('.introduction .top .decoration'),
-        //获取当前窗口的尺寸并改变其中心为原点坐标，也可以改为仅获取指定层的坐标:oUl.offsetWidth
-        x = document.body.offsetWidth / 2,
+    perspactive2(event) {
+      const x = document.body.offsetWidth / 2,
         y = document.body.offsetHeight / 2;
+      const oLi = this.footerDecoration
+      // debugger
+      const oLi2 = this.footerDecoration2
+      //获取鼠标在当前窗口内的坐标值，也可以改为获取指定层的坐标:event.offsetX
+      var mx = event.clientX,
+        my = event.clientY;
+      let marginLeft = ''
+      let marginTop = ''
+      //开始为每个要动的元素设置左边距和上边距，以每个元素的不同zIndex值来区别移动量
+      marginLeft = (x - mx) / 90
+      marginTop = (y - my) / 70
+      // const offset = 2
 
+
+      for (let i = 0; i < oLi.length; i++) {
+        //左边距和上边距的值可以随意调整
+        console.log('randomDictionary',this.randomDictionary)
+        let zIndex = window.getComputedStyle(oLi[i]).zIndex
+        oLi[i].style.transform = 'translate(' + marginLeft * zIndex * this.randomDictionary[i] + 'px,' + marginTop * zIndex * this.randomDictionary[i] + 'px)';
+
+      }
+      for (let i = 0; i < oLi2.length; i++) {
+        let zIndex = window.getComputedStyle(oLi2[i]).zIndex
+        oLi2[i].style.transform = 'translate(' + marginLeft * zIndex + 'px,' + marginTop * zIndex + 'px)';
+      }
 
       //设置当前窗口内的鼠标移动事件，也可以改为仅作用于指定层:oUl.onmousemove
-      document.body.onmousemove = async event => {
-        //获取鼠标在当前窗口内的坐标值，也可以改为获取指定层的坐标:event.offsetX
-        var mx = event.clientX,
-          my = event.clientY;
-        let marginLeft = ''
-        let marginTop = ''
-        //开始为每个要动的元素设置左边距和上边距，以每个元素的不同zIndex值来区别移动量
-        marginLeft = (x - mx) / 90
-        marginTop = (y - my) / 70
-        // await this.$nextTick()
-        for (let i = 0; i < oLi.length; i++) {
-          //左边距和上边距的值可以随意调整
-          // console.log('marginLeft', oLi[i])
-          // console.log('marginLeft', oLi[i].style.zIndex)
-          // console.log('marginLeft', marginLeft)
-          // console.log('marginLeft', marginLeft + 'px')
-          // console.log('marginTop', marginTop + 'px')
-
-          oLi[i].style.transform = 'translate(' + marginLeft + 'px,' + marginTop + 'px)';
-        }
-        for (let i = 0; i < oLi2.length; i++) {
-          oLi2[i].style.transform = 'translate(' + marginLeft + 'px,' + marginTop + 'px)';
-        }
+      // document.body.onmousemove = async event => {
 
 
-      };
-    }
+
+      // };
+    },
   }
 }
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scope>
 @import "../sass/introduction.scss";
 </style>+
