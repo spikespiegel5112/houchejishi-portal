@@ -159,8 +159,25 @@
                     }
                 }
                 .picture {
-                    flex: 1;
+                    display: inline-block;
                     max-width: 580px;
+                    width: 500px;
+                    height: 310px;
+                    vertical-align: middle;
+                    box-sizing: unset;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 0;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+                    img {
+                        display: inline-block;
+                        width: 100%;
+                        opacity: 0;
+                        animation: fromtop2 0.5s forwards;
+                    }
                 }
             }
         }
