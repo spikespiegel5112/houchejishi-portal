@@ -8,14 +8,14 @@
     {
       "icon_id": "14397599",
       "name": "mail",
-      "font_class": "mail1",
+      "font_class": "mail",
       "unicode": "eab2",
       "unicode_decimal": 60082
     },
     {
       "icon_id": "14671210",
       "name": "address",
-      "font_class": "address",
+      "font_class": "location",
       "unicode": "e60b",
       "unicode_decimal": 58891
     },

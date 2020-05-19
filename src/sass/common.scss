@@ -133,9 +133,56 @@
     background-color: #e67331;
     .top {
         height: 100px;
+        color: #fff;
+        ul {
+            margin: 0 auto;
+            padding: 38px 0 0 0;
+            width: 1200px;
+            font-size: 0;
+            li {
+                display: inline-block;
+                width: 33.3%;
+                text-align: left;
+                font-size: 13px;
+                span {
+                    display: inline-block;
+                    padding: 0 5px 0 0;
+                    font-size: 22px;
+                    vertical-align: middle;
+                }
+                label {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
     }
     .bottom {
         height: 70px;
+        background-color: #fff;
+        ul {
+            margin: 0 auto;
+            padding: 28px 0 0 0;
+            min-width: 500px;
+            max-width: 900px;
+            font-size: 0;
+            li {
+                display: inline-block;
+                width: 33%;
+                text-align: center;
+                font-size: 13px;
+                span {
+                    display: inline-block;
+                    padding: 0 5px 0 0;
+                    font-size: 22px;
+                    vertical-align: middle;
+                }
+                label {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
     }
 }
 

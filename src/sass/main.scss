@@ -22,38 +22,84 @@
             background-size: contain;
         }
     }
-    .banner {
-        padding: 150px 0 0 0;
+    .banner_wrapper {
+        padding: 130px 0 0 0;
+        margin: 0 auto;
         width: 100%;
+        max-width: 1200px;
         height: 100%;
 
         .bannertitle {
             display: inline-block;
             vertical-align: middle;
-            width: 450px;
+            width: 430px;
             img {
                 display: inline-block;
-                width: 450px;
+                width: 100%;
             }
         }
         .main {
             display: inline-block;
-            width: 750px;
+            width: 100%;
             height: calc(100vh - 130px);
             vertical-align: middle;
             overflow: visible;
             ul {
-                // width: 100%;
-
                 height: 100%;
                 li {
-                    padding: 50px 0 0 50px;
-
+                    // padding: 50px 0 0 60px;
                     height: 100%;
                     box-sizing: border-box;
-
-                    img {
+                    text-align: left;
+                    font-size: 0;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 0;
                         height: 100%;
+                        vertical-align: middle;
+                    }
+                    .bannertitle {
+                        display: inline-block;
+                        vertical-align: middle;
+                        height: 400px;
+                    }
+                    .banner {
+                        width: 1000px;
+                        height: 100%;
+                        top: 0;
+                        left: 40%;
+                        position: absolute;
+                        right: 0;
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 0;
+                            height: 100%;
+                            vertical-align: middle;
+                        }
+                        &.banner2 {
+                            width: 840px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        &.banner3 {
+                            width: 840px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        > img {
+                            display: inline-block;
+                            width: 1000px;
+                            vertical-align: middle;
+                            &.banner1 {
+                            }
+
+                            &.banner3 {
+                            }
+                        }
                     }
                 }
             }
