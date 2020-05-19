@@ -13,7 +13,10 @@
             </div>
             <div class="bannerpicture">
               <div class="banner">
-                <img src="../image/homepage/banner_1.png" alt="">
+                {{require('@/image/homepage/homepage_banner_1.png')}}
+                <!-- <div class="picture" style="background-image:url(../image/homepage/banner_1.png);"></div> -->
+                <div class="picture"
+                  :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_1.png')+')'}"></div>
               </div>
             </div>
 
@@ -24,10 +27,17 @@
             </div>
             <div class="bannerpicture">
               <div class="banner">
-                <img src="../image/homepage/homepage_banner_2.png" alt="">
+                <div class="picture"
+                  :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_2.png')+')'}"></div>
               </div>
-            </div>
 
+            </div>
+            <!-- <div class="cooperation">
+              <h3>合作金融机构</h3>
+              <div class="picture"
+                :style="{backgroundImage:'url('+require('../image/homepage/homepage_banner_2_cooperation.png')+')'}">
+              </div>
+            </div> -->
           </li>
           <li class="swiper-slide page page3" :class="getActiveClass(2)">
             <div class="bannertitle">
@@ -35,7 +45,8 @@
             </div>
             <div class="bannerpicture">
               <div class="banner">
-                <img src="../image/homepage/homepage_banner_3.png" alt="">
+                <div class="picture"
+                  :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_3.png')+')'}"></div>
               </div>
             </div>
 
@@ -46,7 +57,16 @@
       </div>
 
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="corner"></div>
+      <div class="content">
+      <ul>
+        <li>©2020  上海厚车吉市网络科技有限公司  版权所有</li>
+        <li>ICP备案号：沪ICP备19042645号-1</li>
+        <li>公安部备案号</li>
+      </ul>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     width: 100%;
     // height: calc(100vh - 130px);
     height: 100vh;
-    min-height: 800px;
+    // min-height: 800px;
     position: relative;
     overflow: hidden;
     > .top {
@@ -32,7 +32,8 @@
         .bannertitle {
             display: inline-block;
             vertical-align: middle;
-            width: 430px;
+            max-width: 430px;
+            width: 45%;
             img {
                 display: inline-block;
                 width: 100%;
@@ -51,7 +52,7 @@
                     box-sizing: border-box;
                     text-align: left;
                     font-size: 0;
-                    transition: all 1s;
+                    // transition: all 1s;
 
                     &:before {
                         content: "";
@@ -69,9 +70,6 @@
                             .bannerpicture {
                                 .banner {
                                     opacity: 1;
-                                    img {
-                                        width: 100%;
-                                    }
                                 }
                             }
 
@@ -97,6 +95,8 @@
                         }
                         &.page1 {
                             .bannerpicture {
+                                position: absolute;
+                                left: 40%;
                                 .banner {
                                     img {
                                         vertical-align: bottom;
@@ -105,15 +105,60 @@
                             }
                         }
                         &.page2 {
-                            width: 840px;
+                            .bannertitle {
+                                position: relative;
+                                bottom: 60px;
+                            }
                             .bannerpicture {
-                                left: 55%;
+                                left: 15%;
+                                width: 90%;
+                                height: 100%;
+                                &:before {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 0;
+                                    height: 100%;
+                                    vertical-align: middle;
+                                }
+                                .banner {
+                                    display: inline-block;
+                                    height: calc(100% - 100px);
+                                    vertical-align: middle;
+                                }
+                            }
+                            .cooperation {
+                                width: 100%;
+                                height: 150px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 30px;
+                                .picture {
+                                    width: 100%;
+                                    height: 100%;
+                                    background-repeat: no-repeat;
+                                    background-size: 80%;
+                                    background-position: center right;
+                                }
                             }
                         }
                         &.page3 {
-                            width: 840px;
-                            img {
-                                width: 100%;
+                            margin: 110px 0;
+                            width: 100%;
+                            position: relative;
+                            .bannertitle {
+                                width: 400px;
+                                vertical-align: top;
+                            }
+                            .bannerpicture {
+                                width: 70%;
+                                height: calc(100% - 220px);
+                                position: absolute;
+                                right: 0;
+                                .banner {
+                                    > .picture {
+                                        background-position: center bottom;
+                                    }
+                                }
                             }
                         }
 
@@ -121,23 +166,21 @@
                             display: inline-block;
                             margin: 0 0 0 0;
                             vertical-align: middle;
-                            // height: 400px;
                             opacity: 0;
-                            transition: all 2s 0.3s;
+                            transition: opacity 2s 0.3s;
                         }
                         .bannerpicture {
+                            width: 85%;
                             height: 100%;
                             position: absolute;
                             top: 0;
-                            left: 40%;
-                            // right: 0;
+                            // left: 40%;
                             .banner {
                                 margin: 0 0 0 0;
-                                width: 1000px;
+                                width: 100%;
                                 height: 100%;
-
                                 opacity: 0;
-                                transition: all 2s 0.3s;
+                                transition: opacity 2s 0.3s;
 
                                 &:before {
                                     content: "";
@@ -147,10 +190,14 @@
                                     vertical-align: middle;
                                 }
 
-                                > img {
+                                > .picture {
                                     display: inline-block;
-                                    width: 1000px;
-                                    vertical-align: middle;
+                                    width: 100%;
+                                    height: 100%;
+                                    min-height: 600px;
+                                    background-size: contain;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
                                 }
                             }
                         }
@@ -161,13 +208,35 @@
     }
 
     .footer {
-        width: 480px;
-        height: 450px;
+        width: 100%;
         position: absolute;
         bottom: 0;
         left: 0;
-        background-image: url("../image/homepage/homepage_footer.png");
-        background-size: cover;
-        background-position: bottom;
+        .corner {
+            width: 20%;
+            height: 450px;
+            background-image: url("../image/homepage/homepage_footer.png");
+            background-size: contain;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+        }
+        .content {
+            margin: 0 auto;
+            width: 1200px;
+            height: 40px;
+            font-size: 12px;
+            position: relative;
+            z-index: 1;
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                li {
+                    display: inline-block;
+                    line-height: 40px;
+                    color: #aaa;
+                }
+            }
+        }
     }
 }
