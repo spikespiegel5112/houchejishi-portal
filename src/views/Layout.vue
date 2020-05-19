@@ -8,9 +8,11 @@
               <img src="@/image/common/logo.png" alt="">
             </div>
           </div>
-          <div class="center"></div>
+          <div class="center">
+            <p>联系电话：400-9999-729</p>
+          </div>
           <div class="right">
-            <p>“吉”成信用的力量</p>
+            <p>邮箱：mx sh@mx leasing.com</p>
           </div>
         </div>
         <div class="common_nav_wrapper">

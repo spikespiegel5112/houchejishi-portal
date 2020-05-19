@@ -9,7 +9,6 @@
 @import "@/sass/layout.scss";
 @import "@/sass/common.scss";
 
-@import "@/sass/main.scss";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

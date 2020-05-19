@@ -1,0 +1,173 @@
+.homepage {
+    margin: 0 auto;
+    width: 100%;
+    // height: calc(100vh - 130px);
+    height: 100vh;
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+    > .top {
+        width: 380px;
+        height: 280px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: url("../image/homepage/corner_top.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        // .decoration {
+        //     width: 100%;
+        //     height: 100%;
+        //     background-image: url("../image/homepage/corner_top_decoration.png");
+        //     background-size: contain;
+        // }
+    }
+    .banner_wrapper {
+        padding: 130px 0 0 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+
+        .bannertitle {
+            display: inline-block;
+            vertical-align: middle;
+            width: 430px;
+            img {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+        .main {
+            display: inline-block;
+            width: 100%;
+            height: calc(100vh - 130px);
+            vertical-align: middle;
+            overflow: visible;
+            > ul {
+                height: 100%;
+                li {
+                    height: 100%;
+                    box-sizing: border-box;
+                    text-align: left;
+                    font-size: 0;
+                    transition: all 1s;
+
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 0;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+                    &.page {
+                        &.active {
+                            // opacity: 1;
+                            .bannertitle {
+                                opacity: 1;
+                            }
+                            .bannerpicture {
+                                .banner {
+                                    opacity: 1;
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            &.fromtop {
+                                .bannertitle {
+                                    animation: fromtop 1s forwards;
+                                    opacity: 1;
+                                    transition: opacity 2s 0.3s;
+                                }
+                                .bannerpicture {
+                                    animation: fromtop 1s forwards;
+                                }
+                            }
+                            &.frombottom {
+                                .bannertitle {
+                                    animation: fromtop 1s forwards;
+                                    transition: opacity 2s 0.3s;
+                                }
+                                .bannerpicture {
+                                    animation: frombottom 1s forwards;
+                                }
+                            }
+                        }
+                        &.page1 {
+                            .bannerpicture {
+                                .banner {
+                                    img {
+                                        vertical-align: bottom;
+                                    }
+                                }
+                            }
+                        }
+                        &.page2 {
+                            width: 840px;
+                            .bannerpicture {
+                                left: 55%;
+                            }
+                        }
+                        &.page3 {
+                            width: 840px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .bannertitle {
+                            display: inline-block;
+                            margin: 0 0 0 0;
+                            vertical-align: middle;
+                            // height: 400px;
+                            opacity: 0;
+                            transition: all 2s 0.3s;
+                        }
+                        .bannerpicture {
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 40%;
+                            // right: 0;
+                            .banner {
+                                margin: 0 0 0 0;
+                                width: 1000px;
+                                height: 100%;
+
+                                opacity: 0;
+                                transition: all 2s 0.3s;
+
+                                &:before {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 0;
+                                    height: 100%;
+                                    vertical-align: middle;
+                                }
+
+                                > img {
+                                    display: inline-block;
+                                    width: 1000px;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        width: 480px;
+        height: 450px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url("../image/homepage/homepage_footer.png");
+        background-size: cover;
+        background-position: bottom;
+    }
+}

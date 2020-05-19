@@ -118,6 +118,7 @@ export default {
     return {
       swiperInstance: {},
       activeIndex: null,
+      previousIndex: null,
       slidingFlag: false,
       footerDecoration: [],
       topDecoration: []
@@ -168,12 +169,6 @@ export default {
     init() {
       this.swiperInstance = new Swiper('.swiper-container', {
         direction: 'vertical',
-        cubeEffect: {
-          shadow: false,
-          slideShadows: false,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        },
         mousewheel: {
           sensitivity: 9999
         },
