@@ -9,11 +9,11 @@ Vue.use(VueRouter)
 const routes = [{
   path: '',
   name: 'layout',
-  redirect: '/homepage',
+  redirect: '/',
   component: Layout,
   children: [{
     "name": "homepage",
-    "path": "/homepage",
+    "path": "/",
     component: () => import("@/views/Homepage.vue"),
     "meta": {
       "title": "主页",
@@ -37,7 +37,8 @@ const routes = [{
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: '/',
+  // base: process.env.BASE_URL,
   routes
 })
 
