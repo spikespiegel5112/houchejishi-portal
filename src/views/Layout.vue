@@ -12,15 +12,16 @@
             <p>联系电话：400-9999-729</p>
           </div>
           <div class="right">
-            <p>邮箱：mx sh@mx leasing.com</p>
+            <p>邮箱：mx-sh@mx-leasing.com</p>
           </div>
         </div>
         <div class="common_nav_wrapper">
           <div class="bg"></div>
           <ul>
             <li v-for='(item, index) in menuDictionary' :key='index' :class="{active:item.active===true}"
-              @click='changeNav(item, index)'>
-              <router-link :to="item.path">{{item.title}}</router-link>
+              @click='chooseNav(item, index)'>
+              <a href="javascript:;">{{item.title}}</a>
+              <!-- <router-link v-else :to="item.path">{{item.title}}</router-link> -->
             </li>
           </ul>
         </div>
@@ -44,7 +45,7 @@ export default {
     return {
       menuDictionary: [{
         title: '首页',
-        path: '/',
+        path: '',
         active: false
       }, {
         title: '系统登录',
@@ -64,14 +65,14 @@ export default {
   },
   watch: {
     routeData(val) {
-      this.changeNav(val)
+      this.highlightBav(val)
     }
   },
   mounted() {
     this.routeData = this.$route
   },
   methods: {
-    changeNav(val) {
+    highlightBav(val) {
       let result = []
       this.menuDictionary.forEach((item) => {
         let aaa = JSON.parse(JSON.stringify(Object.assign(item, {
@@ -82,6 +83,12 @@ export default {
       })
       this.menuDictionary = result
 
+    },
+    chooseNav(path) {
+      this.highlightBav(path)
+      this.$router.push({
+        path: path
+      })
     }
 
   }

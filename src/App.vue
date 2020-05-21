@@ -8,6 +8,7 @@
 @import "@/sass/reset.scss";
 @import "@/sass/layout.scss";
 @import "@/sass/common.scss";
+@import "@/sass/mediaquery.scss";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
