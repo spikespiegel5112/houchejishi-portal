@@ -13,7 +13,7 @@
             </div>
             <div class="bannerpicture">
               <div class="banner">
-                {{require('@/image/homepage/homepage_banner_1.png')}}
+                <!-- {{require('@/image/homepage/homepage_banner_1.png')}} -->
                 <!-- <div class="picture" style="background-image:url(../image/homepage/banner_1.png);"></div> -->
                 <div class="picture"
                   :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_1.png')+')'}"></div>
