@@ -40,13 +40,25 @@
             </div> -->
           </li>
           <li class="swiper-slide page page3" :class="getActiveClass(2)">
-            <div class="bannertitle">
-              <img src="../image/homepage/homepage_banner_title_3.png" alt="">
+            <div class="content">
+              <div class="bannertitle">
+                <img src="../image/homepage/homepage_banner_title_3.png" alt="">
+              </div>
+              <div class="bannerpicture">
+                <div class="banner">
+                  <div class="picture"
+                    :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_3.png')+')'}"></div>
+                </div>
+              </div>
             </div>
-            <div class="bannerpicture">
-              <div class="banner">
-                <div class="picture"
-                  :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_3.png')+')'}"></div>
+
+            <div class="footer">
+              <div class="content">
+                <ul>
+                  <li>©2020 上海厚车吉市网络科技有限公司 版权所有</li>
+                  <li>ICP备案号：沪ICP备19042645号-1</li>
+                  <li>公安部备案号</li>
+                </ul>
               </div>
             </div>
 
@@ -57,16 +69,7 @@
       </div>
 
     </div>
-    <div class="footer">
-      <div class="corner"></div>
-      <div class="content">
-      <ul>
-        <li>©2020  上海厚车吉市网络科技有限公司  版权所有</li>
-        <li>ICP备案号：沪ICP备19042645号-1</li>
-        <li>公安部备案号</li>
-      </ul>
-      </div>
-    </div>
+    <div class="corner"></div>
   </div>
 </template>
 

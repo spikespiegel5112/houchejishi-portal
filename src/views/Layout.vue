@@ -44,7 +44,7 @@ export default {
     return {
       menuDictionary: [{
         title: '首页',
-        path: 'homepage',
+        path: '/',
         active: false
       }, {
         title: '系统登录',
