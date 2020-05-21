@@ -28,12 +28,12 @@
             </div>
 
           </div>
-          <div class="picture" :style="animationStyle(3)">
+          <div class="picture" >
             <img src="../image/cooperation/cooperation_banner.png" alt="">
           </div>
         </div>
         <div class="qa">
-          <div class="picture" :style="animationStyle(3)">
+          <div class="picture" >
             <img src="../image/cooperation/cooperation_banner_2.png" alt="">
           </div>
           <div class='article' :style="animationStyle(1)">

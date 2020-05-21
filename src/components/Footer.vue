@@ -12,7 +12,7 @@
         </li>
         <li>
           <span class="iconfont icon-mail"></span>
-          <label>邮箱：</label>
+          <label>邮箱：mx-sh@mx-leasing.com</label>
         </li>
       </ul>
     </div>

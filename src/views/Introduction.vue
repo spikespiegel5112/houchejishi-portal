@@ -98,6 +98,7 @@
         <div class="decoration3"></div>
         <div class="decoration4"></div>
         <div class="decoration5"></div>
+        <div class="decoration6"></div>
       </div>
 
     </div>
