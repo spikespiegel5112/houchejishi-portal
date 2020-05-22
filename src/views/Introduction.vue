@@ -1,7 +1,7 @@
 <template>
   <div class="introduction" ref='introduction' v-on:mousemove='perspactive'>
     <div class="top" ref='top' :style='topOffset'>
-      <div class="decoration1"></div>
+      <!-- <div class="decoration1"></div> -->
       <div class="decoration2"></div>
       <div class="decoration3"></div>
     </div>

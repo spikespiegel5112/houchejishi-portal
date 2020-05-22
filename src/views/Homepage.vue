@@ -9,7 +9,8 @@
         <ul class="swiper-wrapper">
           <li class="swiper-slide page page1" :class="getActiveClass(0)">
             <div class="bannertitle">
-              <img src="../image/homepage/homepage_banner_title_1.png" alt="">
+              <div :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_title_1.png')+')'}"></div>
+              <!-- <img src="../image/homepage/homepage_banner_title_1.png" alt=""> -->
             </div>
             <div class="bannerpicture">
               <div class="banner">
@@ -23,7 +24,8 @@
           </li>
           <li class="swiper-slide page page2" :class="getActiveClass(1)">
             <div class="bannertitle">
-              <img src="../image/homepage/homepage_banner_title_2.png" alt="">
+              <div :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_title_2.png')+')'}"></div>
+              <!-- <img src="../image/homepage/homepage_banner_title_2.png" alt=""> -->
             </div>
             <div class="bannerpicture">
               <div class="banner">

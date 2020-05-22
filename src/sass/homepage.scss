@@ -33,7 +33,32 @@
             display: inline-block;
             vertical-align: middle;
             // max-width: 430px;
-            width: 45%;
+            margin: 0 0 0 0;
+            width: 50%;
+            height: 100%;
+            vertical-align: middle;
+            opacity: 0;
+            transition: opacity 2s 0.3s;
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            > div {
+                display: inline-block;
+                width: 100%;
+                height: 70%;
+                min-height: 320px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                image-rendering: auto;
+
+            }
             img {
                 display: inline-block;
                 width: 85%;
@@ -99,9 +124,14 @@
                             .bannertitle {
                                 // padding: 0 0 0 calc(100vw - 1200px);
                                 width: 40%;
+                                max-height: 680px;
                                 img {
                                     display: inline-block;
                                     // margin: 0 0 0 calc(1250px - 100vw);
+                                    min-width: 260px;
+                                }
+                                div {
+                                    display: inline-block;
                                     min-width: 260px;
                                 }
                             }
@@ -120,13 +150,23 @@
                         }
                         &.page2 {
                             .bannertitle {
-                                position: relative;
+                                width: 40%;
+                                max-height: 680px;
+                                div {
+                                    display: inline-block;
+                                    margin: 30px 0 0 0;
+                                    min-width: 260px;
+                                    vertical-align: top;
+                                }
                             }
                             .bannerpicture {
-                                left: 15%;
-                                width: calc(100vw - 65%);
+                                width: calc(100vw - 55%);
                                 min-width: 1050px;
                                 height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 5%;
+
                                 &:before {
                                     content: "";
                                     display: inline-block;
@@ -137,6 +177,9 @@
                                 .banner {
                                     display: inline-block;
                                     vertical-align: middle;
+                                    >.picture{
+                                        margin: 20px 0 0 0;
+                                    }
                                 }
                             }
                             .cooperation {
@@ -174,8 +217,9 @@
                                 position: relative;
                                 .bannertitle {
                                     display: inline-block;
-                                    width: 400px;
+                                    width: 30%;
                                     vertical-align: top;
+
                                 }
                                 .bannerpicture {
                                     width: 70%;
@@ -218,18 +262,14 @@
                         }
 
                         .bannertitle {
-                            display: inline-block;
-                            margin: 0 0 0 0;
-                            width: 50%;
-                            vertical-align: middle;
-                            opacity: 0;
-                            transition: opacity 2s 0.3s;
                         }
                         .bannerpicture {
                             width: 85%;
                             height: 100%;
-                            position: absolute;
-                            top: 0;
+                            vertical-align: middle;
+                            min-height: 500px;
+                            // position: absolute;
+                            // top: 0;
                             // left: 40%;
                             .banner {
                                 margin: 0 0 0 0;
@@ -250,7 +290,7 @@
                                     display: inline-block;
                                     width: 100%;
                                     height: 100%;
-                                    min-height: 480px;
+                                    min-height: 380px;
                                     background-size: contain;
                                     background-position: center;
                                     background-repeat: no-repeat;
