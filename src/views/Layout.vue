@@ -45,7 +45,7 @@ export default {
     return {
       menuDictionary: [{
         title: '首页',
-        path: '',
+        path: '/',
         active: false
       }, {
         title: '系统登录',
@@ -76,7 +76,7 @@ export default {
       let result = []
       this.menuDictionary.forEach((item) => {
         let aaa = JSON.parse(JSON.stringify(Object.assign(item, {
-          active: item.path === val.path.replace('/', '')
+          active: item.path === val.path
         })))
         result.push(aaa)
 
@@ -84,11 +84,17 @@ export default {
       this.menuDictionary = result
 
     },
-    chooseNav(path) {
-      this.highlightBav(path)
-      this.$router.push({
-        path: path
-      })
+    chooseNav(data) {
+      this.highlightBav(data)
+
+      if (data.path === 'system') {
+        location.href = location.origin + '/system'
+      } else {
+        this.$router.push({
+          path: data.path
+        })
+      }
+
     }
 
   }
