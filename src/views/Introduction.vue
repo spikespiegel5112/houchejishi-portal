@@ -9,33 +9,36 @@
       <div class="main swiper-container">
         <ul class="swiper-wrapper">
           <li class="swiper-slide page1" :class="getActiveClass(0)">
-            <div class="content ">
-              <div class="title">
-                <img src="../image/introduction/slide_title_1.png" alt="">
+            <div class="content">
+              <div class="article ">
+                <div class="title">
+                  <img src="../image/introduction/slide_title_1.png" alt="">
+                </div>
+                <div class="paragraph">
+                  <h2>吉市分期产品简介</h2>
+                  <p> 吉市分期整合了全国27家商业银行、支付宝等金融机构信用产品，为商户提供一站式的分期产品定制服务；可为终端消费者提供0手续费的优质分期服务。</p>
+                  <h2>核心竞争力</h2>
+                  <ul class="rules">
+                    <li>安全、可靠的专业金融服务平台 </li>
+                    <li>前沿的技术手段引领分期秒支付</li>
+                    <li>值得信赖的国有金融机构</li>
+                    <li>从消费者征信到消费分期额度的充分转化</li>
+                    <li>商户自由订制的灵活分期产品</li>
+                  </ul>
+                </div>
               </div>
-              <div class="article">
-                <h2>吉市分期产品简介</h2>
-                <p class="paragraph"> 吉市分期整合了全国27家商业银行、支付宝等金融机构信用产品，为商户提供一站式的分期产品定制服务；可为终端消费者提供0手续费的优质分期服务。</p>
-                <h2>核心竞争力</h2>
-                <ul class="rules">
-                  <li>安全、可靠的专业金融服务平台 </li>
-                  <li>前沿的技术手段引领分期秒支付</li>
-                  <li>值得信赖的国有金融机构</li>
-                  <li>从消费者征信到消费分期额度的充分转化</li>
-                  <li>商户自由订制的灵活分期产品</li>
-                </ul>
+              <div class="picture">
+                <img src="../image/introduction/introduction_slider_1.png" alt="">
               </div>
-            </div>
-            <div class="picture">
-              <img src="../image/introduction/introduction_slider_1.png" alt="">
             </div>
 
           </li>
           <li class="swiper-slide page2" :class="getActiveClass(1)">
-            <div class="picture">
-              <img src="../image/introduction/introduction_slider_2.png" alt="">
-            </div>
+
             <div class="content ">
+              <div class="picture">
+                <img src="../image/introduction/introduction_slider_2.png" alt="">
+              </div>
               <div class="article">
                 <h2>我们的服务</h2>
                 <div class="paragraph">
@@ -81,10 +84,9 @@
                   “百保箱”基于智能化业务系统，运用大数据风控，打造极致用户体验。用户通过小程序或者APP实现即时远程签约，让保费分期触手可及。首付低至10%，最高期限10个月，最低0利率，百保箱真正做到“付车险，就一点”。
                 </p>
               </div>
-
-            </div>
-            <div class="picture">
-              <img src="../image/introduction/introduction_slider_3.png" alt="">
+              <div class="picture">
+                <img src="../image/introduction/introduction_slider_3.png" alt="">
+              </div>
             </div>
 
           </li>

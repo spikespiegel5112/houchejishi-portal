@@ -1,9 +1,7 @@
 .homepage {
     margin: 0 auto;
     width: 100%;
-    // height: calc(100vh - 130px);
     height: 100vh;
-    // min-height: 800px;
     position: relative;
     overflow: hidden;
     > .top {
@@ -32,7 +30,6 @@
         .bannertitle {
             display: inline-block;
             vertical-align: middle;
-            // max-width: 430px;
             margin: 0 0 0 0;
             width: 50%;
             height: 100%;
@@ -57,13 +54,6 @@
                 background-repeat: no-repeat;
                 vertical-align: middle;
                 image-rendering: auto;
-
-            }
-            img {
-                display: inline-block;
-                width: 85%;
-                min-width: 360px;
-                max-width: 450px;
             }
         }
         .main {
@@ -79,8 +69,6 @@
                     box-sizing: border-box;
                     text-align: left;
                     font-size: 0;
-                    // transition: all 1s;
-
                     &:before {
                         content: "";
                         display: inline-block;
@@ -90,7 +78,6 @@
                     }
                     &.page {
                         &.active {
-                            // opacity: 1;
                             .bannertitle {
                                 opacity: 1;
                             }
@@ -122,12 +109,10 @@
                         }
                         &.page1 {
                             .bannertitle {
-                                // padding: 0 0 0 calc(100vw - 1200px);
                                 width: 40%;
                                 max-height: 680px;
                                 img {
                                     display: inline-block;
-                                    // margin: 0 0 0 calc(1250px - 100vw);
                                     min-width: 260px;
                                 }
                                 div {
@@ -137,7 +122,7 @@
                             }
                             .bannerpicture {
                                 display: inline-block;
-                                width: 60%;
+                                width: 57%;
                                 .banner {
                                     width: 60vw;
                                     min-width: 600px;
@@ -160,12 +145,12 @@
                                 }
                             }
                             .bannerpicture {
-                                width: calc(100vw - 55%);
+                                width: 1500px;
                                 min-width: 1050px;
                                 height: 100%;
                                 position: absolute;
                                 top: 0;
-                                left: 5%;
+                                left: 0%;
 
                                 &:before {
                                     content: "";
@@ -177,8 +162,11 @@
                                 .banner {
                                     display: inline-block;
                                     vertical-align: middle;
-                                    >.picture{
-                                        margin: 20px 0 0 0;
+                                    > .picture {
+                                        margin: 10px 0 0 0;
+                                        height: 95%;
+                                        background-position: calc(100% - 50%) center;
+                                        position: absolute;
                                     }
                                 }
                             }
@@ -198,9 +186,9 @@
                             }
                         }
                         &.page3 {
-                            // margin: 110px 0;
                             width: 100%;
                             height: 100%;
+                            min-height: 580px;
                             position: relative;
                             &:before {
                                 content: "";
@@ -212,24 +200,31 @@
                             .content {
                                 display: inline-block;
                                 width: 100%;
-                                height: calc(100% - 220px);
+                                height: 100%;
                                 vertical-align: middle;
                                 position: relative;
                                 .bannertitle {
                                     display: inline-block;
-                                    width: 30%;
+                                    width: 36%;
                                     vertical-align: top;
-
+                                    > div {
+                                        transform: translateY(-40px);
+                                    }
                                 }
                                 .bannerpicture {
-                                    width: 70%;
-                                    // height: calc(100% - 220px);
-                                    height: 100%;
-                                    position: absolute;
-                                    right: 0;
+                                    display: inline-block;
+                                    width: 57%;
                                     .banner {
+                                        display: inline-block;
+                                        vertical-align: middle;
+
                                         > .picture {
-                                            background-position: center bottom;
+                                            margin: 10px 0 0 0;
+                                            height: 90%;
+                                            background-position: center left;
+                                            position: absolute;
+                                            bottom: 50px;
+                                            transform: translateX(-70px);
                                         }
                                     }
                                 }
@@ -268,9 +263,6 @@
                             height: 100%;
                             vertical-align: middle;
                             min-height: 500px;
-                            // position: absolute;
-                            // top: 0;
-                            // left: 40%;
                             .banner {
                                 margin: 0 0 0 0;
                                 width: 100%;

@@ -44,7 +44,10 @@
           <li class="swiper-slide page page3" :class="getActiveClass(2)">
             <div class="content">
               <div class="bannertitle">
-                <img src="../image/homepage/homepage_banner_title_3.png" alt="">
+                <!-- <img src="../image/homepage/homepage_banner_title_3.png" alt=""> -->
+                <div :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_title_3.png')+')'}">
+                </div>
+
               </div>
               <div class="bannerpicture">
                 <div class="banner">
