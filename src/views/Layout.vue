@@ -20,7 +20,6 @@
           <ul>
             <li v-for='(item, index) in menuDictionary' :key='index' :class="{active:item.active===true}">
               <a href="javascript:;" @click='chooseNav(item, index)'>{{item.title}}</a>
-              <!-- <router-link :to="item.path">{{item.title}}</router-link> -->
               <ul v-if="item.menu.length>0" class="submenu">
                 <li v-for='(item2, index2) in item.menu' :key="index2">
                   <a href="javascript:;" @click='chooseMenu(item2.index, item)'>{{index2+1}}.{{item2.title}}</a>
@@ -124,7 +123,7 @@ export default {
     chooseNav(data) {
       this.highlightBav(data)
 
-      if (data.path === 'system') {
+      if (data.path === '/system') {
         location.href = location.origin + '/system'
       } else {
         this.$router.push({
