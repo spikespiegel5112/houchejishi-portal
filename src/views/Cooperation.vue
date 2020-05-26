@@ -28,12 +28,12 @@
             </div>
 
           </div>
-          <div class="picture" >
+          <div class="picture">
             <img src="../image/cooperation/cooperation_banner.png" alt="">
           </div>
         </div>
         <div class="qa">
-          <div class="picture" >
+          <div class="picture">
             <img src="../image/cooperation/cooperation_banner_2.png" alt="">
           </div>
           <div class='article' :style="animationStyle(1)">
@@ -78,6 +78,9 @@ export default {
   mounted() {
     this.init()
     this.getActiveClass()
+  },
+  beforeDestroy() {
+    this.swiperInstance = null
   },
   methods: {
     init() {

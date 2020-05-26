@@ -52,9 +52,9 @@
                   </dl>
                   <dl>
                     <dt>平台优势：</dt>
-                    <dd>
+                    <dd class="advantage">
                       <p>整合各大银行资源</p>
-                      <p>联合银联共同开发</p>
+                      <!-- <p>联合银联共同开发</p> -->
                       <p>多渠道线上线下无感快捷支付</p>
                       <p>C端消费者0秒申请分期</p>
                     </dd>
@@ -75,18 +75,22 @@
           </li>
           <li class="swiper-slide page3" :class="getActiveClass(2)">
             <div class="content ">
+              <div class="picture">
+                <img src="../image/introduction/introduction_slider_3.jpg" alt="">
+              </div>
               <div class="article">
-                <h1>付车险，就一点</h1>
+                <h1>
+                  <img src="../image/introduction/introduction_title_2.png" alt="">
+                </h1>
+                <h2>百保箱产品简介</h2>
                 <p class="paragraph">
-                  “百保箱”是由明羡融资租赁（上海）有限公司设计推出的专业保费分期产品，产品系列覆盖车险，附加商业险、其他财产险等多险种类型，为企业用户及个人用户提供专业、优质、便捷的保费分期服务。
-                </p>
+                  “百保箱”是由明羡融资租赁（上海）有限公司设计推出的专业保费分期产品，产品系列覆盖车险，附加商业险、其他财产险等多险种类型，为企业用户及个人用户提供专业、优质、便捷的保费分期服务。</p>
+                <h2>百保箱亮点</h2>
                 <p class="paragraph">
                   “百保箱”基于智能化业务系统，运用大数据风控，打造极致用户体验。用户通过小程序或者APP实现即时远程签约，让保费分期触手可及。首付低至10%，最高期限10个月，最低0利率，百保箱真正做到“付车险，就一点”。
                 </p>
               </div>
-              <div class="picture">
-                <img src="../image/introduction/introduction_slider_3.png" alt="">
-              </div>
+
             </div>
 
           </li>
@@ -157,23 +161,34 @@ export default {
         result.push(item)
       })
       return result
+    },
+    currentSlideIndex() {
+      return this.$store.state.currentSlideIndex
     }
 
   },
+  watch: {
+    currentSlideIndex(value) {
+      this.swiperInstance.slideTo(value);
+    }
+  },
   async mounted() {
-    this.init()
     await this.$nextTick()
+    this.init()
     setTimeout(() => {
       this.initDecoration()
 
     }, 300)
   },
+  beforeDestroy() {
+    this.swiperInstance = null
+  },
   methods: {
-    init() {
+    async init() {
       this.swiperInstance = new Swiper('.swiper-container', {
         direction: 'vertical',
         mousewheel: {
-          sensitivity: 9999
+          // sensitivity: 9999
         },
         spaceBetween: 300,
         pagination: {
@@ -181,6 +196,7 @@ export default {
           clickable: true,
         },
       })
+      await this.$nextTick()
       this.swiperInstance.on('slideChange', () => {
         console.log('slide activeIndex', this.swiperInstance.activeIndex);
         console.log('slide previousIndex', this.swiperInstance.previousIndex);
@@ -193,8 +209,12 @@ export default {
           this.slidingFlag = false
         })
       });
+      this.activeIndex = this.swiperInstance.activeIndex
+      this.previousIndex = this.swiperInstance.previousIndex
+      this.swiperInstance.slideTo(this.currentSlideIndex);
+
       setTimeout(() => {
-        this.activeIndex = 0
+        // this.activeIndex = 0
 
       }, 200)
     },
@@ -204,6 +224,7 @@ export default {
     getActiveClass(index) {
       let result = ''
       if (index === this.activeIndex) {
+        // debugger
         if ((this.previousIndex || 0) - this.activeIndex <= 0) {
           result = 'fromtop'
         } else {
