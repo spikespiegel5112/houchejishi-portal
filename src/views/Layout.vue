@@ -5,7 +5,9 @@
         <div class="top">
           <div class="left">
             <div class="logo">
+              <!-- {{devicePixelRatio}} -->
               <img src="@/image/common/logo.png" alt="">
+              <!-- {{innerWidth}} -->
             </div>
           </div>
           <div class="center">
@@ -88,7 +90,14 @@ export default {
   computed: {
     currentRouteData() {
       return this.$route
+    },
+    devicePixelRatio() {
+      return devicePixelRatio
+    },
+    innerWidth() {
+      return window.innerWidth
     }
+
 
   },
   watch: {
@@ -102,8 +111,13 @@ export default {
   mounted() {
     this.routeData = this.$route
     this.highlightBav(this.$route)
+    this.test()
   },
   methods: {
+    test() {
+      // document.body.style.zoom = 0.67
+      document.querySelector('.common_main_container').style.zoom = 1
+    },
     highlightBav() {
       let result = []
       const routeData = this.currentRouteData
