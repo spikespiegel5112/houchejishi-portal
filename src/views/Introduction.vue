@@ -138,7 +138,8 @@ export default {
       previousIndex: null,
       slidingFlag: false,
       footerDecoration: [],
-      topDecoration: []
+      topDecoration: [],
+      mousewheelEnable: true
     }
   },
   computed: {
@@ -180,6 +181,13 @@ export default {
   watch: {
     currentSlideIndex(value) {
       this.swiperInstance.slideTo(value);
+    },
+    mousewheelEnable(val) {
+      if (val) {
+        this.swiperInstance.mousewheel.enable();
+      } else {
+        this.swiperInstance.mousewheel.disable();
+      }
     }
   },
   async mounted() {
@@ -218,15 +226,18 @@ export default {
         this.swiperInstance.on('slideChangeTransitionEnd', () => {
           this.slidingFlag = false
         })
+
+        if (this.mousewheelEnable) {
+          setTimeout(() => {
+            this.mousewheelEnable = true
+          }, 1000)
+        }
+        this.mousewheelEnable = false
       });
       this.activeIndex = this.swiperInstance.activeIndex
       this.previousIndex = this.swiperInstance.previousIndex
       this.swiperInstance.slideTo(this.currentSlideIndex);
 
-      setTimeout(() => {
-        // this.activeIndex = 0
-
-      }, 200)
     },
     active() {
 
