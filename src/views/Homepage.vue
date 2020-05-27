@@ -47,7 +47,17 @@
                 <!-- <img src="../image/homepage/homepage_banner_title_3.png" alt=""> -->
                 <div :style="{backgroundImage:'url('+require('@/image/homepage/homepage_banner_title_3.png')+')'}">
                 </div>
-
+                <!-- <div class="paragraph">
+                  如果 分期只是一种支付方式，那你把他想简单了；
+                  如果 分期只是解决缺钱的困境，那你把他想得太简单了；
+                  如果 分期只是用户的主观选择，那你把他想得更简单了；
+                  如果……
+                  那么 信用额度与营销活动绑定，就等于锁定了用户的消费力；
+                  那么 分期支付与营销活动绑定，就等于骤然降低了消费门槛；
+                  那么 免息分期与营销活动绑定，就等于撬动了消费的巨大杠杆；
+                  那么……
+                  吉市分期——不简单的支付
+                </div> -->
               </div>
               <div class="bannerpicture">
                 <div class="banner">
