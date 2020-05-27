@@ -133,8 +133,8 @@ export default {
         },
       })
       this.swiperInstance.on('slideChange', () => {
-        console.log('slide activeIndex', this.swiperInstance.activeIndex);
-        console.log('slide previousIndex', this.swiperInstance.previousIndex);
+        // console.log('slide activeIndex', this.swiperInstance.activeIndex);
+        // console.log('slide previousIndex', this.swiperInstance.previousIndex);
         this.activeIndex = this.swiperInstance.activeIndex
         this.previousIndex = this.swiperInstance.previousIndex
         this.swiperInstance.on('slideChangeTransitionStart', () => {
