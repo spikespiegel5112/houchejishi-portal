@@ -92,7 +92,17 @@ export default {
       swiperInstance: {},
       activeIndex: null,
       previousIndex: null,
-      slidingFlag: false
+      slidingFlag: false,
+      mousewheelEnable: true
+    }
+  },
+  watch: {
+    mousewheelEnable(val) {
+      if (val) {
+        this.swiperInstance.mousewheel.enable();
+      } else {
+        this.swiperInstance.mousewheel.disable();
+      }
     }
   },
   mounted() {
@@ -102,7 +112,9 @@ export default {
     init() {
       this.swiperInstance = new Swiper('.swiper-container', {
         direction: 'vertical',
-        mousewheel: true,
+        mousewheel: {
+          releaseOnEdges: true
+        },
         spaceBetween: 300,
         pagination: {
           el: '.swiper-pagination',
@@ -121,10 +133,17 @@ export default {
         this.swiperInstance.on('slideChangeTransitionEnd', () => {
           this.slidingFlag = false
         })
+        if (this.mousewheelEnable) {
+          setTimeout(() => {
+            this.mousewheelEnable = true
+          }, 1000)
+        }
+        this.mousewheelEnable = false
+
       });
+
       setTimeout(() => {
         this.activeIndex = 0
-
       }, 200)
     },
     getActiveClass(index) {

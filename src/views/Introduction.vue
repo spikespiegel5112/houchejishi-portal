@@ -98,13 +98,23 @@
         <div class="swiper-pagination"></div>
 
       </div>
-      <div class="footer" ref='footer' :style='bottomOffset'>
-        <div class="decoration1"></div>
-        <div class="decoration2"></div>
-        <div class="decoration3"></div>
-        <div class="decoration4"></div>
-        <div class="decoration5"></div>
-        <div class="decoration6"></div>
+      <div class="footer" :style='bottomOffset'>
+        <div class="decoration_wrapper" ref='footer'>
+          <div class="decoration1"></div>
+          <div class="decoration2"></div>
+          <div class="decoration3"></div>
+          <div class="decoration4"></div>
+          <div class="decoration5"></div>
+          <div class="decoration6"></div>
+        </div>
+
+        <div class="content">
+          <ul>
+            <li>©2020 上海厚车吉市网络科技有限公司 版权所有</li>
+            <li>ICP备案号：沪ICP备19042645号-1</li>
+            <li>公安部备案号</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -133,14 +143,14 @@ export default {
   },
   computed: {
     topOffset() {
-      const totalOffset = 66;
+      const totalOffset = 120;
       const offset = totalOffset / 3
       return {
         top: -offset * this.activeIndex + 'px'
       }
     },
     bottomOffset() {
-      const totalOffset = 66;
+      const totalOffset = 120;
       const offset = totalOffset / 3
       return {
         bottom: -totalOffset + offset * (this.activeIndex + 1) + 'px'
