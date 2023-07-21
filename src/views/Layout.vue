@@ -25,14 +25,14 @@
               :key="index"
               :class="{ active: item.active === true }"
             >
-              <a href="javascript:;" @click="chooseNav(item, index)">{{
-                item.title
-              }}</a>
+              <a href="javascript:;" @click="chooseNav(item, index)">
+                {{ item.title }}
+              </a>
               <ul v-if="item.menu.length > 0" class="submenu">
                 <li v-for="(item2, index2) in item.menu" :key="index2">
-                  <a href="javascript:;" @click="chooseMenu(item2.index, item)"
-                    >{{ index2 + 1 }}.{{ item2.title }}</a
-                  >
+                  <a href="javascript:;" @click="chooseMenu(item2.index, item)">
+                    {{ index2 + 1 }}.{{ item2.title }}
+                  </a>
                 </li>
               </ul>
             </li>
@@ -119,12 +119,12 @@ export default {
     // routeData(val) {
     // },
     currentRouteData() {
-      this.highlightBav();
+      this.highLightNav();
     },
   },
   mounted() {
     this.routeData = this.$route;
-    this.highlightBav(this.$route);
+    this.highLightNav(this.$route);
     this.test();
   },
   methods: {
@@ -132,7 +132,7 @@ export default {
       // document.body.style.zoom = 0.67
       document.querySelector(".common_main_container").style.zoom = 1;
     },
-    highlightBav() {
+    highLightNav() {
       let result = [];
       const routeData = this.currentRouteData;
       this.menuDictionary.forEach((item) => {
@@ -151,10 +151,10 @@ export default {
       this.menuDictionary = result;
     },
     chooseNav(data) {
-      this.highlightBav(data);
+      this.highLightNav(data);
 
-      if (data.path === "/system") {
-        location.href = location.origin + "/system";
+      if (data.path === "/kaizhou") {
+        location.href = location.origin + "/kaizhou";
       } else {
         this.$router.push({
           path: data.path,
