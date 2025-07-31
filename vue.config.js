@@ -2,6 +2,7 @@ const { defineConfig } = require("@vue/cli-service");
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath: process.env.NODE_ENV === "production" ? "./" : "./",
   // 修改 html-webpack-plugin 配置
   chainWebpack: (config) => {
     config.plugin("html").tap((args) => {
