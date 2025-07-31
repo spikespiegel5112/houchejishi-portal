@@ -1,19 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    currentSlideIndex: 0
+    currentSlideIndex: 0,
   },
   mutations: {
     updateSlider(state, payload) {
-      state.currentSlideIndex = payload
-    }
+      state.currentSlideIndex = payload;
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});

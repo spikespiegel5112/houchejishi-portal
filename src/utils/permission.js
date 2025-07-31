@@ -1,25 +1,24 @@
-import router from '../router'
+import router from "../router";
 
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 NProgress.configure({
-    showSpinner: false
-})
-
+  showSpinner: false,
+});
 
 router.beforeEach(async (to, from, next) => {
-    console.log(from + to)
-    NProgress.start()
-    next()
-})
+  console.log(from + to);
+  NProgress.start();
+  next();
+});
 
 router.afterEach(() => {
-    // console.log(to)
-    // console.log(from)
-    NProgress.done()
-})
+  // console.log(to)
+  // console.log(from)
+  NProgress.done();
+});
 
-router.onError(error => {
-    console.log('router.onError', error)
-})
+router.onError((error) => {
+  console.log("router.onError", error);
+});
