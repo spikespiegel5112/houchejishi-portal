@@ -43,7 +43,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: "history",
-  base: "/houchejishi/portal/",
+  base: "/houchejishi/",
   // base: process.env.BASE_URL,
   routes,
 });
