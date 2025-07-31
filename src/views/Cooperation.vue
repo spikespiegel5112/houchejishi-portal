@@ -97,7 +97,6 @@ export default {
   methods: {
     init() {},
     getActiveClass(time) {
-      // let result = 'aaa'
       const timer = () => {
         setTimeout(() => {
           return "active";

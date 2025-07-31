@@ -133,12 +133,12 @@ export default {
       document.querySelector(".common_main_container").style.zoom = 1;
     },
     highLightNav() {
-      let result = [];
+      const result = [];
       const routeData = this.currentRouteData;
       this.menuDictionary.forEach((item) => {
         console.log(item.path, routeData.path);
 
-        let aaa = JSON.parse(
+        const nav = JSON.parse(
           JSON.stringify(
             Object.assign(item, {
               active: item.path === routeData.path,
@@ -146,7 +146,7 @@ export default {
           )
         );
 
-        result.push(aaa);
+        result.push(nav);
       });
       this.menuDictionary = result;
     },
