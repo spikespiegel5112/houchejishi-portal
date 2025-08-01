@@ -253,7 +253,6 @@ export default {
     getActiveClass(index) {
       let result = "";
       if (index === this.activeIndex) {
-        // debugger
         if ((this.previousIndex || 0) - this.activeIndex <= 0) {
           result = "fromtop";
         } else {

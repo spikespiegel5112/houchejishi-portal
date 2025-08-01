@@ -165,7 +165,15 @@ export default {
     },
     chooseNav(data) {
       this.highLightNav(data);
-
+      if (this.isPathRegistered(data.path)) {
+        console.log(this.isPathRegistered(data.path));
+        this.$router.push({
+          path: data.path,
+        });
+      } else {
+        console.log(this.isPathRegistered(data.path));
+        window.location.href = data.path;
+      }
       if (data.path === "/kaizhou") {
         location.href = location.origin + "/kaizhou";
       } else {
@@ -178,21 +186,23 @@ export default {
       this.$store.commit("updateSlider", 0);
     },
     chooseMenu(index, data) {
-      const isPathRegistered = (path) => {
-        const resolved = this.$router.resolve(path);
-        return resolved.matched.length > 0;
-      };
       console.log(index, data);
       if (!!data.path && data.path !== this.$route.path) {
-        if (isPathRegistered(data.path)) {
+        if (this.isPathRegistered(data.path)) {
+          console.log(this.isPathRegistered(data.path));
           this.$router.push({
             path: data.path,
           });
         } else {
+          console.log(this.isPathRegistered(data.path));
           window.location.href = data.path;
         }
       }
       this.$store.commit("updateSlider", index);
+    },
+    isPathRegistered(path) {
+      const resolved = this.$router.resolve(path);
+      return resolved.route.matched.length > 0;
     },
   },
 };
