@@ -25,12 +25,12 @@
               :key="index"
               :class="{ active: item.active === true }"
             >
-              <a href="javascript:;" @click="chooseNav(item, index)">
+              <a @click="chooseNav(item, index)">
                 {{ item.title }}
               </a>
               <ul v-if="item.menu.length > 0" class="submenu">
                 <li v-for="(item2, index2) in item.menu" :key="index2">
-                  <a href="javascript:;" @click="chooseMenu(item2.index, item)">
+                  <a @click="chooseMenu(item2.index, item2)">
                     {{ index2 + 1 }}.{{ item2.title }}
                   </a>
                 </li>
@@ -61,10 +61,25 @@ export default {
           menu: [],
         },
         {
-          title: "开州地图",
-          path: "/kaizhou",
+          title: "文心一言",
+          path: "/chat",
           active: false,
           menu: [],
+        },
+        {
+          title: "活动案例",
+          path: "/",
+          active: false,
+          menu: [
+            {
+              title: "依视路",
+              path: "/yishilu",
+            },
+            {
+              title: "春天再出发",
+              path: "/ppctzcf",
+            },
+          ],
         },
         {
           title: "产品介绍",
@@ -156,15 +171,17 @@ export default {
       if (data.path === "/kaizhou") {
         location.href = location.origin + "/kaizhou";
       } else {
-        this.$router.push({
-          path: data.path,
-        });
+        if (data.path !== this.$route.path) {
+          this.$router.push({
+            path: data.path,
+          });
+        }
       }
       this.$store.commit("updateSlider", 0);
     },
     chooseMenu(index, data) {
       console.log(index, data);
-      if (data.path !== this.$route.path) {
+      if (!!data.path && data.path !== this.$route.path) {
         this.$router.push({
           path: data.path,
         });
