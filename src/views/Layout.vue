@@ -131,8 +131,6 @@ export default {
     },
   },
   watch: {
-    // routeData(val) {
-    // },
     currentRouteData() {
       this.highLightNav();
     },
@@ -180,11 +178,19 @@ export default {
       this.$store.commit("updateSlider", 0);
     },
     chooseMenu(index, data) {
+      const isPathRegistered = (path) => {
+        const resolved = this.$router.resolve(path);
+        return resolved.matched.length > 0;
+      };
       console.log(index, data);
       if (!!data.path && data.path !== this.$route.path) {
-        this.$router.push({
-          path: data.path,
-        });
+        if (isPathRegistered(data.path)) {
+          this.$router.push({
+            path: data.path,
+          });
+        } else {
+          window.location.href = data.path;
+        }
       }
       this.$store.commit("updateSlider", index);
     },
