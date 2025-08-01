@@ -158,31 +158,22 @@ export default {
             })
           )
         );
-
         result.push(nav);
       });
       this.menuDictionary = result;
     },
     chooseNav(data) {
       this.highLightNav(data);
-      if (this.isPathRegistered(data.path)) {
-        console.log(this.isPathRegistered(data.path));
+      if (data.path === this.$route.path) {
+        return;
+      } else if (this.isPathRegistered(data.path)) {
         this.$router.push({
           path: data.path,
         });
       } else {
-        console.log(this.isPathRegistered(data.path));
         window.location.href = data.path;
       }
-      if (data.path === "/kaizhou") {
-        location.href = location.origin + "/kaizhou";
-      } else {
-        if (data.path !== this.$route.path) {
-          this.$router.push({
-            path: data.path,
-          });
-        }
-      }
+
       this.$store.commit("updateSlider", 0);
     },
     chooseMenu(index, data) {

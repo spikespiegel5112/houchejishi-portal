@@ -172,17 +172,17 @@ export default {
     },
     footerRandomDictionary() {
       let result = [];
-      this.footerDecoration.forEach(() => {
-        const item = Math.random() > 0.5 ? "1" : "-1";
-        result.push(item);
+      console.log(this.footerDecoration);
+      Object.keys(this.footerDecoration).forEach(() => {
+        result.push(Math.random() > 0.5 ? "1" : "-1");
       });
+
       return result;
     },
     topRandomDictionary() {
       let result = [];
-      this.footerDecoration.forEach(() => {
-        const item = Math.random() > 0.5 ? "1" : "-1";
-        result.push(item);
+      Object.keys(this.footerDecoration).forEach(() => {
+        result.push(Math.random() > 0.5 ? "1" : "-1");
       });
       return result;
     },
